@@ -24,3 +24,38 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.bubble-sent {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 1.1;
+  background: #1982FC;
+  color: white;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+}
+
+
+.bubble-wrapper {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: max-content;
+  overflow: visible;
+}
+
+
+.bubble-received {
+  display: inline-block;
+  max-width: 17rem;
+  white-space: normal;
+  line-height: 1.28;
+  background: #30d158;
+  color: white;
+  padding: 8px 11px;
+  border-radius: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+}
