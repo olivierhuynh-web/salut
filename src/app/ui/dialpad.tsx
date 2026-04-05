@@ -13,7 +13,7 @@ const FOURTH_REPLY_DELAY_MS = 2000;
 const INCOMING_MESSAGE_TEXT =
   'ou comment je me suis retrouvé·e bloqué·e dans la tête de deux femmes au bord de l’explosion';
 const SECOND_REPLY_TEXT = 'une pièce de théâtre';
-const THIRD_REPLY_TEXT = 'http://www.liendutheatre.com';
+const THIRD_REPLY_TEXT = 'https://www.instagram.com/chere_magma/';
 const FOURTH_REPLY_TEXT = 'ça va être bien';
 
 const keys: { main: string; sub: string }[][] = [
