@@ -42,7 +42,7 @@ const keys: { main: string; sub: string }[][] = [
 function Bubble({ text, bubbleId }: { text: string; bubbleId: string }) {
   const ref = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!ref.current) return;
     gsap.fromTo(
       ref.current,
@@ -62,7 +62,7 @@ function Bubble({ text, bubbleId }: { text: string; bubbleId: string }) {
       ref={ref}
       data-bubble-id={bubbleId}
       className='bubble-wrapper'
-      style={{ transformOrigin: 'bottom center' }}
+      style={{ transformOrigin: 'bottom center', opacity: 0 }}
     >
       <span className='bubble-sent'>{text}</span>
     </div>
@@ -468,6 +468,8 @@ export default function Dialpad() {
           ref={bottomRef}
           className='flex flex-col items-center gap-4 px-4 pb-3 pt-4'
         >
+          <div className='w-full max-w-xs border-b border-zinc-200 pb-3' />
+
           <div className='flex flex-col gap-3 w-full max-w-xs'>
             {keys.map((row, i) => (
               <div key={i} className='flex gap-3 justify-center'>
