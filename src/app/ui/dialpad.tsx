@@ -129,7 +129,7 @@ function SentChatBubble({
     <div
       ref={ref}
       data-chat-item-id={itemId}
-      className='flex justify-end pl-12'
+      className='flex justify-end pl-16'
       style={{ transformOrigin: 'bottom right', opacity: 0 }}
     >
       {href ? (
@@ -420,7 +420,7 @@ export default function Dialpad() {
       >
         <div
           ref={chatStackRef}
-          className='h-full flex flex-col justify-center gap-2.5'
+          className='h-full flex flex-col justify-center gap-2'
         >
           {messages.map((msg, i) => (
             <div

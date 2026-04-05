@@ -28,8 +28,10 @@ body {
 .bubble-sent {
   position: relative;
   display: inline-block;
-  white-space: nowrap;
-  line-height: 1.1;
+  white-space: normal;
+  word-break: break-all;
+  max-width: 16rem;
+  line-height: 1.28;
   background: #1982FC;
   color: white;
   padding: 7px 12px;
