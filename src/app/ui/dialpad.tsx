@@ -72,7 +72,7 @@ function Bubble({ text, bubbleId }: { text: string; bubbleId: string }) {
 function ReplyBubble({ text, itemId }: { text: string; itemId: string }) {
   const ref = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!ref.current) return;
     gsap.fromTo(
       ref.current,
@@ -92,7 +92,7 @@ function ReplyBubble({ text, itemId }: { text: string; itemId: string }) {
       ref={ref}
       data-chat-item-id={itemId}
       className='flex justify-start pr-12'
-      style={{ transformOrigin: 'bottom left' }}
+      style={{ transformOrigin: 'bottom left', opacity: 0 }}
     >
       <span className='bubble-received'>{text}</span>
     </div>
@@ -110,7 +110,7 @@ function SentChatBubble({
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!ref.current) return;
     gsap.fromTo(
       ref.current,
@@ -130,7 +130,7 @@ function SentChatBubble({
       ref={ref}
       data-chat-item-id={itemId}
       className='flex justify-end pl-12'
-      style={{ transformOrigin: 'bottom right' }}
+      style={{ transformOrigin: 'bottom right', opacity: 0 }}
     >
       {href ? (
         <a
