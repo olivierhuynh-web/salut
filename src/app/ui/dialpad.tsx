@@ -149,7 +149,6 @@ function SentChatBubble({
 }
 
 export default function Dialpad() {
-  const [number, setNumber] = useState('');
   const [messages, setMessages] = useState<string[]>([]);
   const [showChat, setShowChat] = useState(false);
   const [showBottom, setShowBottom] = useState(true);
@@ -404,16 +403,9 @@ export default function Dialpad() {
 
   function press(key: string) {
     if (done) return;
-    if (messageKeys.has(key)) {
-      if (key === nextExpected) setMessages((prev) => [...prev, key]);
-    } else {
-      setNumber((prev) => prev + key);
+    if (messageKeys.has(key) && key === nextExpected) {
+      setMessages((prev) => [...prev, key]);
     }
-  }
-
-  function backspace() {
-    if (done) return;
-    setNumber((prev) => prev.slice(0, -1));
   }
 
   return (
@@ -476,21 +468,6 @@ export default function Dialpad() {
           ref={bottomRef}
           className='flex flex-col items-center gap-4 px-4 pb-3 pt-4'
         >
-          <div className='w-full max-w-xs flex items-center justify-between border-b border-zinc-200 pb-3'>
-            <span className='text-3xl tracking-widest font-light text-zinc-800 flex-1'>
-              {number}
-            </span>
-            {number && (
-              <button
-                onClick={backspace}
-                className='text-zinc-400 hover:text-zinc-700 transition-colors px-2'
-                aria-label='Effacer'
-              >
-                ⌫
-              </button>
-            )}
-          </div>
-
           <div className='flex flex-col gap-3 w-full max-w-xs'>
             {keys.map((row, i) => (
               <div key={i} className='flex gap-3 justify-center'>
