@@ -42,7 +42,7 @@ const keys: { main: string; sub: string }[][] = [
 function Bubble({ text, bubbleId }: { text: string; bubbleId: string }) {
   const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!ref.current) return;
     gsap.fromTo(
       ref.current,
