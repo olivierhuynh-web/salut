@@ -475,8 +475,8 @@ export default function Dialpad() {
                   <button
                     key={key.main}
                     onClick={() => press(key.main)}
-                    disabled={done || (messageKeys.has(key.main) && key.main !== nextExpected)}
-                    className='w-20 h-20 rounded-full flex flex-col items-center justify-center transition-colors active:bg-zinc-200'
+                    disabled={done || !messageKeys.has(key.main)}
+                    className='w-20 h-20 rounded-full flex flex-col items-center justify-center transition-colors active:bg-zinc-200 disabled:opacity-40'
                     style={{ background: 'rgba(120,120,128,0.12)' }}
                   >
                     <span
