@@ -72,7 +72,7 @@ function Bubble({ text, bubbleId }: { text: string; bubbleId: string }) {
 function ReplyBubble({ text, itemId }: { text: string; itemId: string }) {
   const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!ref.current) return;
     gsap.fromTo(
       ref.current,
@@ -110,7 +110,7 @@ function SentChatBubble({
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!ref.current) return;
     gsap.fromTo(
       ref.current,
