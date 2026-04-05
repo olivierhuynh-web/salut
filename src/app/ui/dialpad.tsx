@@ -474,7 +474,7 @@ export default function Dialpad() {
       {showBottom && (
         <div
           ref={bottomRef}
-          className='flex flex-col items-center gap-4 px-4 pb-8 pt-4'
+          className='flex flex-col items-center gap-4 px-4 pb-3 pt-4'
         >
           <div className='w-full max-w-xs flex items-center justify-between border-b border-zinc-200 pb-3'>
             <span className='text-3xl tracking-widest font-light text-zinc-800 flex-1'>
